@@ -1,23 +1,25 @@
 #!/bin/bash
 
 ########################################
-#                                       
-#	Script to facilitate ripping multiple CDs to flac files
-# based on cdparanoia (https://en.wikipedia.org/wiki/Cdparanoia)                                                                
-# 
-# A numbered directory in ~/Downloads is created for each CD                   
-#                                                                            
+#
+#	Script to facilitate ripping multiple CDs to flac files.
+# The script is based on and requires
+# cdparanoia (https://en.wikipedia.org/wiki/Cdparanoia)
+#
+# Directories are created for each CD in ~/Downloads,
+# each with consequtive numbers
+#
 ########################################
 
-echo "Hello! The CD just inserted is ripped to flac."
+echo "Hello! The CD just inserted is now being ripped to flac."
 
-echo "----------------------------------------------"
+echo "--------------------------------------------------------"
 
 # change to working directory ~/Downloads
 
 cd ~/Downloads
 
-# if CDs have been ripped before, check for highest numbered directory disc-n
+# if CDs have been ripped before, check for directory disc-n with highest number
 
 if [ ! $(find ./ -maxdepth 0 -type d -regextype posix-extended -regex ".*disc-[1-9]\+[0-9]*") ]
 
