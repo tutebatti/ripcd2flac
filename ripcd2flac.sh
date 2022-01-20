@@ -7,7 +7,7 @@
 # cdparanoia (https://en.wikipedia.org/wiki/Cdparanoia)
 #
 # Directories are created for each CD in ~/Downloads,
-# each with consequtive numbers
+# each with consequtive numbers.
 #
 ########################################
 
@@ -51,11 +51,11 @@ echo "Copying tracks in new folder disc-$n..."
 
 (cd ./disc-${n}; cdparanoia -B)
 
-echo "Converting wav-files to flac..."
+echo "Converting wav files to flac..."
 
 find ./disc-${n}/ -iname "*.wav" -execdir flac {} \;
 
-echo "Deleting wav-files..."
+echo "Deleting wav files..."
 
 find ./disc-${n}/ -iname "*.wav" -delete
 
