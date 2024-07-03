@@ -11,6 +11,22 @@
 #
 ########################################
 
+# Check if nessecary packages are installed
+
+which flac &> /dev/null
+
+if [ $? -ne 0 ]; then
+   echo "flac is not installed; aborting..."
+   exit 1
+
+which cdparanoia &> /dev/null
+
+if [ $? -ne 0 ]; then
+   echo "cdparanoia is not installed; aborting..."
+   exit 1
+
+# Welcome message
+
 echo "Hello! The CD just inserted is now being ripped to flac."
 
 echo "--------------------------------------------------------"
